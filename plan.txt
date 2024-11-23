@@ -1,0 +1,39 @@
+Random customers come in -- random ailment and potion needed
+
+(1) Gather ingredients
+    Leaf, Flower, Rock/ore, Seed, Root, Mushroom
+(2) (Stretch) perform tests on them
+(3) (Stretch) Put them in special transforming equipment, which changes them to dust, etc.
+(3) Put them in the potion jar
+
+Click "Give to customer"
+    Match the potion color + requirements: cured, get $ and new customer
+
+Icons needed:
+    Ingredient
+        Leaf
+        Flower
+        Seed
+        Root
+        Mushroom
+    Prepared
+        Water
+        Powder
+        Flame
+        Chopped up
+        Potion
+    Testers
+        Magnet (magnetic)
+        Bunsen Burner (flame test)
+        pH strip (ph)
+        Nose (smell)
+        Tongue (taste)
+        Eye (look)
+        Microscope (look)
+    Equipment
+        Crucible (burn)
+        Flame (heat)
+        Mortar & Pestle (grind)
+        Knife (chop)
+        Eye Dropper (dilute)
+        Cauldron (mix)
