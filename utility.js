@@ -21,6 +21,14 @@ function aboutEvery(f, avgDelay) {
     }
 }
 
+function deg2rad(x) {
+    return x / 180 * Math.PI
+}
+
+function rad2deg(x) {
+    return x / Math.PI * 180
+}
+
 if (jQuery) {
     jQuery.fn.placeRandomly = function(x) {
         this.append(x)

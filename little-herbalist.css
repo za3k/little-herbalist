@@ -14,19 +14,19 @@ label {
 }
 
 
-.icon, .slot {
+.slot {
     width: 64px;
     height: 64px;
     margin: 2.5px;
 }
 
-.item {
+.icon {
     height: fit-content;
     width: fit-content;
     user-select: none;
     position: relative;
 }
-.item label {
+.icon label {
     position: absolute;
     background: black;
     color: white;
@@ -38,21 +38,19 @@ label {
     text-decoration: none;
     font-size: 12pt;
 }
-.item .sprite:nth-child(2) {
+.icon .sprite:nth-child(2) {
+    /* TODO: Don't think this is doing saturation and luminance right */
     filter: hue-rotate(calc(var(--h) * 1deg)) brightness(calc(var(--l) * 2%)) saturate(calc(var(--s) * 2%));
     --h: 0;
     --s: 100;
     --l: 100;
 }
-.item .sprite:nth-child(2) {
+.icon .sprite:nth-child(2) {
     position: absolute;
 }
 
 .slot {
     border: 1px dashed lightgrey;
-}
-.icon {
-    border: 1px;
 }
 
 .backpack label {
@@ -108,10 +106,41 @@ body > footer {
     opacity: 80%;
 }
 
-.equipment {
+.lab > .equipment {
     border: 1px solid;
     width: fit-content;
     text-align: center;
     padding: 2em;
+    padding: 20px 28px;
     margin: 2em;
 }
+.equipment.icon {
+    height: 210px;
+}
+.equipment > .sprite {
+    width: 192px !IMPORTANT;
+    height: 192px !IMPORTANT;
+    background-size: cover;
+}
+.equipment > .slot {
+    position: absolute;
+    top: 95px;
+    left: 61px;
+}
+.equipment > label {
+    margin-bottom: 15px;
+}
+.equipment > .action {
+    margin-top: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 4px;
+
+}
+
+.slot:nth-child(1) { z-index: 6; }
+.slot:nth-child(2) { z-index: 5; }
+.slot:nth-child(3) { z-index: 4; }
+.slot:nth-child(4) { z-index: 3; }
+.slot:nth-child(5) { z-index: 2; }
+.slot:nth-child(6) { z-index: 1; }

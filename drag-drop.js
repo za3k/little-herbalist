@@ -84,7 +84,8 @@ $(document).on("mousedown", ".draggable", (e) => {
     startDrag($(e.currentTarget), {x: e.offsetX, y: e.offsetY})
     e.preventDefault()
 })
-
+ 
+// TODO: Position correctly on failed drag, too.
 $(document).on("drag", ".drop-slot .draggable", (_, e) => {
     e.dragged.css({
         "position": "",
