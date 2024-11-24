@@ -1,0 +1,109 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+label {
+    font-variant: small-caps;
+    padding: 4px 0 4px 6px;
+    text-decoration: underline;
+    font-family: serif;
+}
+
+
+.icon, .slot {
+    width: 64px;
+    height: 64px;
+    margin: 2.5px;
+}
+
+.item {
+    height: fit-content;
+    width: fit-content;
+    user-select: none;
+    position: relative;
+}
+.item label {
+    position: absolute;
+    background: black;
+    color: white;
+    bottom: calc(-1em - 4px);
+    left: 0;
+    right: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12pt;
+}
+.item .sprite:nth-child(2) {
+    filter: hue-rotate(calc(var(--h) * 1deg)) brightness(calc(var(--l) * 2%)) saturate(calc(var(--s) * 2%));
+    --h: 0;
+    --s: 100;
+    --l: 100;
+}
+.item .sprite:nth-child(2) {
+    position: absolute;
+}
+
+.slot {
+    border: 1px dashed lightgrey;
+}
+.icon {
+    border: 1px;
+}
+
+.backpack label {
+    display: block;
+    width: 100%;
+} 
+
+.gather {
+    height: 20%;
+    width: 100%;
+    position: relative;
+}
+
+.forest .gather {
+    background: lightgreen;
+}
+
+.backpack {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: fit-content;
+    width: calc(64px * 2 + 14px);
+    transform: translate(0, -50%);
+    padding: 2.5px;
+    border: 1px solid;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body > * {
+    flex: 1 1;
+}
+
+body > footer {
+    display: block;
+    padding: 1rem;
+    border-top: 1px lightgrey solid;
+    flex: 0 0;
+}
+
+.drag-ghost {
+    opacity: 20%;
+}
+
+.drag-active {
+    opacity: 80%;
+}

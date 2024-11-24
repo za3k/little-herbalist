@@ -10,7 +10,11 @@ function movePreview(preview, place) {
     if (place.y > height - pHeight) place.y = height - pHeight
     if (place.y < 0) place.y = 0
 
-    preview.css("left", `${place.x}px`).css("top", `${place.y}px`)
+    preview.css({
+        left: `${place.x}px`,
+        top: `${place.y}px`,
+        position: "absolute"
+    })
 }
 
 function move(dragged, to) {
@@ -35,6 +39,12 @@ function startDrag(target, offset) {
     $("html").append(preview)
     target.addClass("drag-ghost")
     preview.addClass("drag-active")
+
+    // Convert preview left/right to pixel-based
+    movePreview(preview, {
+        x: target.offset().left + $("#game").offset().left,
+        y: target.offset().top + $("#game").offset().top
+    })
 
     function dragLocation(e) {
         return {

@@ -54,7 +54,7 @@ var Sprites = {
         // TODO: synchronously return an object, so you can call: await Sprites.loadSheet("sheet.png", 16).at(1, 2)
     },
 
-    load: async function(href, scale) {
+    load: async function(href) {
         const size = await Sprites.imageDimensions(href);
 
         return new Sprites.Sprite(href, 0, 0, size.width, size.height);

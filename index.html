@@ -3,12 +3,32 @@
     <script src="jquery.min.js"></script>
     <script src="drag-drop.js"></script>
     <script src="sprites.js"></script>
-    <script src="index.js" defer></script>
-    <link rel="stylesheet" href="index.css">
+    <script src="utility.js"></script>
+    <script src="little-herbalist.js" defer></script>
+    <link rel="stylesheet" href="little-herbalist.css">
     <title>Little Herbalist</title>
 </head>
 <body>
-    <div class="game">
+    <div class="game" id="game">
+        <div class="area forest">
+            <div class="gather drop-area" data-area="forest"></div>
+        </div>
+        <div class="area lab">
+            <div class="equipment potion-stand">
+                <label>Brewing Stand</label>
+                <div class="icon" data-icon="0" data-label="Brewing Stand"></div>
+                <div class="slot drop-slot"></div>
+            </div>
+        </div>
+        <div class="backpack">
+            <label>Satchel</label>
+            <div class="slot drop-slot"></div>
+            <div class="slot drop-slot"></div>
+            <div class="slot drop-slot"></div>
+            <div class="slot drop-slot"></div>
+            <div class="slot drop-slot"></div>
+            <div class="slot drop-slot"></div>
+        </div>
     </div>
     <footer><b>little herbalist</b> was made by <a href="https://za3k.com">za3k</a> as part of <a href="https://za3k.com/hackaday">hack-a-day</a>. Source code is <a href="https://github.com/za3k/little-herbalist">on github</a>.</footer>
 </body>
