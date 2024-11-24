@@ -30,7 +30,7 @@ function findTargetDrop(target) {
     const x = target.position().left + target.width()/2 
     const y = target.position().top + target.height()/2
 
-    const e = $(document.elementsFromPoint(x, y)).filter(".drop-slot").first()
+    const e = $(document.elementsFromPoint(x, y)).filter(".drop-slot, .drop-area").first()
     if (e.length > 0) return e
 }
 
@@ -65,6 +65,10 @@ function startDrag(target, offset) {
         $(window).off("mouseup")
         $(window).off("mousemove")
 
+        target.css({
+            left: preview.css("left"),
+            top: preview.css("top"),
+        })
         movePreview(preview, dragLocation(e))
         const slot = findTargetDrop(preview)
         preview.remove()
@@ -79,4 +83,18 @@ $(document).on("mousedown", ".draggable", (e) => {
     if (e.button > 0) return
     startDrag($(e.currentTarget), {x: e.offsetX, y: e.offsetY})
     e.preventDefault()
+})
+
+$(document).on("drag", ".drop-slot .draggable", (_, e) => {
+    e.dragged.css({
+        "position": "",
+        "left": "",
+        "top": "",
+    })
+}).on("drag", ".drop-area .draggable", (_, e) => {
+    e.dragged.css({
+        "position": "absolute",
+        "left": e.dragged.offset().left + e.to.offset().left,
+        "top": e.dragged.offset().top + e.to.offset().top
+    })
 })

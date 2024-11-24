@@ -107,3 +107,11 @@ body > footer {
 .drag-active {
     opacity: 80%;
 }
+
+.equipment {
+    border: 1px solid;
+    width: fit-content;
+    text-align: center;
+    padding: 2em;
+    margin: 2em;
+}

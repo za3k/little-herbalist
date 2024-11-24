@@ -78,12 +78,15 @@ class Game {
         this.init()
     }
 
+    finishBrew() {
+
+    }
+
     chooseIngredientFor(area) {
         var type="ingredient", name, color = undefined
         if (area == "forest") {
             name = randChoice(["leaf", "seed", "root", "flower", "mushroom", "water", "ore"])
             color = randChoice(FOREST_COLORS)
-            console.log(color)
         }
         return new Item(name, type, color)
     }
@@ -105,15 +108,8 @@ class Game {
                 it.clear()
             })
         })
+        $(".action.finish-brew").on("click", () => { this.finishBrew() })
     }
 }
-
-$(document).on("drag", ".slot .draggable", (_, e) => {
-    e.dragged.css({
-        "position": "",
-        "left": "",
-        "top": "",
-    })
-})
 
 window.game = new Game()
